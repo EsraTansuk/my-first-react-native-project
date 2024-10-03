@@ -19,7 +19,6 @@ export const HomeScreen: FC<AppProps> = ({pickedNumber}) => {
     setGameIsOver(false)
   }
 
-  
   function gameOverHandler() {
     setGameIsOver(true)
   }
@@ -34,7 +33,7 @@ export const HomeScreen: FC<AppProps> = ({pickedNumber}) => {
     screen = <GameOverScreen  />
   }
 
-
+  
   return (
     <View style={styles.rootScreen}>
       <ImageBackground

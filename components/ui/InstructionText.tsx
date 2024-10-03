@@ -5,11 +5,12 @@ import {StyleSheet, Text} from 'react-native'
 
 export interface InstructionTextProps {
   children?: React.ReactNode
+  style?: object
 
 }
 
-export const InstructionText:FC<InstructionTextProps> = ({children}) => {
-  return <Text style={styles.instructionText}>{children}</Text>
+export const InstructionText:FC<InstructionTextProps> = ({children, style}) => {
+  return <Text style={[styles.instructionText, style]}>{children}</Text>
 }
 
 const styles = StyleSheet.create({
