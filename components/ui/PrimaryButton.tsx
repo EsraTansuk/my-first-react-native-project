@@ -1,7 +1,8 @@
 
-import { Colors } from '@/constants/Colors';
+
 import {FC} from 'react'
 import {View, Text, Pressable, StyleSheet} from 'react-native'
+import { Colors } from '../../constants/Colors';
 
 export interface PrimaryButtonProps {
   children: React.ReactNode;
@@ -44,7 +45,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
     textAlign: 'center',
-    fontWeight: 'bold',
   },
   pressed: {
     opacity: 0.75,

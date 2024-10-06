@@ -5,7 +5,7 @@ import Title from '../components/ui/Title'
 import { TitleProps } from '../components/ui/Title'
 import { Card } from '../components/ui/Card'
 import { InstructionText } from '../components/ui/InstructionText'
-import { Colors } from '@/constants/Colors'
+import { Colors } from '../constants/Colors'
 
 export interface StartGameScreenProps {
   onPickNumber: (pickedNumber: number) => void

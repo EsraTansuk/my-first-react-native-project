@@ -4,8 +4,8 @@ import Title from "../components/ui/Title";
 import NumberContainer from "../components/game/NumberContainer";
 import { PrimaryButton } from "../components/ui/PrimaryButton";
 import { Card } from "../components/ui/Card";
-import { InstructionText } from "@/components/ui/InstructionText";
 import { Ionicons } from "@expo/vector-icons";
+import { InstructionText } from "../components/ui/InstructionText";
 
 export interface GameScreenProps {
   userNumber: number;

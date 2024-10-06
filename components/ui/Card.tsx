@@ -1,8 +1,9 @@
 
-import { Colors } from '@/constants/Colors'
+
 import React, {FC} from 'react'
 import {View} from 'react-native'
 import {StyleSheet} from 'react-native'
+import { Colors } from '../../constants/Colors'
 
 export interface CardProps {
   children?: React.ReactNode

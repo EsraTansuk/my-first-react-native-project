@@ -1,18 +1,37 @@
 import { Image, StyleSheet, Platform, View, ImageBackground, SafeAreaView } from "react-native";
-import StartGameScreen from "@/screens/StartGameScreen";
-import React, { FC, useState } from "react";
-import GameScreen from "@/screens/GameScreen";
-import GameOverScreen from "@/screens/GameOverScreen";
-import { Colors } from "@/constants/Colors";
-import LinearGradient from "react-native-linear-gradient";
+import React, { FC, useEffect, useState } from "react";
+import { useFonts } from "expo-font";
+import StartGameScreen from "../../screens/StartGameScreen";
+import GameOverScreen from "../../screens/GameOverScreen";
+import GameScreen from "../../screens/GameScreen";
+import * as SplashScreen from 'expo-splash-screen';
 
-export interface AppProps {
+SplashScreen.preventAutoHideAsync();
+
+export interface HomeScreenProps {
   pickedNumber: number
 }
 
-export const HomeScreen: FC<AppProps> = ({pickedNumber}) => {
+export const HomeScreen: FC<HomeScreenProps> = ({pickedNumber}) => {
   const [userNumber, setUserNumber] = useState<number>()
   const [gameIsOver, setGameIsOver] = useState<boolean>(true)
+
+  const [fontsLoaded] = useFonts(
+    {
+      'open-sans': require('../../assets/fonts/OpenSans-Regular.ttf'),
+      'open-sans-bold': require('../../assets/fonts/OpenSans-Bold.ttf'),
+    }
+  )
+
+  useEffect(() => {
+    async function hideSplashScreen() {
+      if (fontsLoaded) {
+        await SplashScreen.hideAsync();
+      }
+    }
+    hideSplashScreen();
+  }, [fontsLoaded]);
+
 
   function pickedNumberHandler(pickedNumber: number) { 
     setUserNumber(pickedNumber) 
