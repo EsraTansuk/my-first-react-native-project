@@ -6,7 +6,7 @@ import { Colors } from "../constants/Colors";
 
 function GameOverScreen() {
   return (
-    <View>
+    <View style={styles.rootContainer}>
       <Title>Game Over!</Title>
       <View style={styles.imageContainer}>
         <Image
@@ -14,6 +14,7 @@ function GameOverScreen() {
           style={styles.image}
         />
       </View>
+      <Text>Your phone needed X rounds to guess the number Y</Text>
     </View>
   );
 }
@@ -25,15 +26,20 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    padding: 24,
   },
   image: {
-    backgroundColor: "white",
+    width: "100%",
+    height: "100%",
+
   },
   imageContainer: {
-    width: 400,
-    height: 500,
+    width: 300,
+    height: 300,
+    borderRadius: 150,
     borderWidth: 3,
     borderColor: Colors.primary800,
     overflow: "hidden",
+    margin:36,
   },
 });
