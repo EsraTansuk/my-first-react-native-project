@@ -5,6 +5,8 @@ import StartGameScreen from "../../screens/StartGameScreen";
 import GameOverScreen from "../../screens/GameOverScreen";
 import GameScreen from "../../screens/GameScreen";
 import * as SplashScreen from 'expo-splash-screen';
+import { Colors } from "../../constants/Colors";
+import { LinearGradient } from "expo-linear-gradient";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -13,8 +15,9 @@ export interface HomeScreenProps {
 }
 
 export const HomeScreen: FC<HomeScreenProps> = ({pickedNumber}) => {
-  const [userNumber, setUserNumber] = useState<number>()
+  const [userNumber, setUserNumber] = useState<number | null>(null)
   const [gameIsOver, setGameIsOver] = useState<boolean>(true)
+  const [guessRounds, setGuessRounds] = useState<number>(0)
 
   const [fontsLoaded] = useFonts(
     {
@@ -42,19 +45,31 @@ export const HomeScreen: FC<HomeScreenProps> = ({pickedNumber}) => {
     setGameIsOver(true)
   }
 
+  function startNewGameHandler() {
+    setGuessRounds(0);
+    setUserNumber(null); 
+    setGameIsOver(true); 
+  }
+
   let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />
 
-  if (userNumber) {
-    screen = <GameScreen userNumber={userNumber} onGameOver= {gameOverHandler} />
+  if (userNumber && !gameIsOver) {
+    screen = <GameScreen userNumber={userNumber} onGameOver={gameOverHandler} />;
   }
 
   if (gameIsOver && userNumber) {
-    screen = <GameOverScreen  />
+    screen = (
+      <GameOverScreen
+        userNumber={userNumber}
+        roundsNumber={guessRounds}
+        onStartNewGame={startNewGameHandler} 
+      />
+    );
   }
 
   
   return (
-    <View style={styles.rootScreen}>
+    <LinearGradient colors={[Colors.primary700, Colors.accent500]} style={styles.rootScreen}>
       <ImageBackground
         source={require('../../assets/images/background-img.jpg')}
         resizeMode='cover'
@@ -62,7 +77,7 @@ export const HomeScreen: FC<HomeScreenProps> = ({pickedNumber}) => {
         imageStyle={styles.backgroundImage}>
         <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
       </ImageBackground>
-    </View>
+    </LinearGradient>
   )
 }
 
