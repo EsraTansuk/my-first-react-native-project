@@ -6,6 +6,8 @@ import { PrimaryButton } from "../components/ui/PrimaryButton";
 import { Card } from "../components/ui/Card";
 import { Ionicons } from "@expo/vector-icons";
 import { InstructionText } from "../components/ui/InstructionText";
+import { FlatList } from "react-native-gesture-handler";
+import { GuessLogItem } from "../components/game/GuessLogItem";
 
 export interface GameScreenProps {
   userNumber: number;
@@ -67,6 +69,8 @@ const GameScreen: FC<GameScreenProps> = ({ userNumber, onGameOver }) => {
     setGuessRounds(prevGuessRounds => [newRndNumber, ...prevGuessRounds]);
   }
 
+  const guessRoundsLength = guessRounds.length;
+
   return (
     <View style={styles.screen}>
       <Title>Opponent's Guess</Title>
@@ -87,7 +91,12 @@ const GameScreen: FC<GameScreenProps> = ({ userNumber, onGameOver }) => {
         </View>
       </Card>
       <View>
-        {guessRounds.map((guessRound => <Text key={guessRound}>{guessRound}</Text>))}
+        {/* {guessRounds.map((guessRound => <Text key={guessRound}>{guessRound}</Text>))} */}
+        <FlatList
+          data={guessRounds}
+          renderItem={( itemData ) => <GuessLogItem roundNumber={guessRoundsLength - itemData.index} guess={itemData.index}  />}
+          keyExtractor={(item) => item.toString()}
+        />
       </View>
     </View>
   );

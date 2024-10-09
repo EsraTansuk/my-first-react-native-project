@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform, View, ImageBackground, SafeAreaView } from "react-native";
+import { Image, StyleSheet, ImageBackground, SafeAreaView } from "react-native";
 import React, { FC, useEffect, useState } from "react";
 import { useFonts } from "expo-font";
 import StartGameScreen from "../../screens/StartGameScreen";
