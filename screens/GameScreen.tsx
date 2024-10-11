@@ -90,7 +90,7 @@ const GameScreen: FC<GameScreenProps> = ({ userNumber, onGameOver }) => {
           </View>
         </View>
       </Card>
-      <View>
+      <View style={styles.listContainer}>
         {/* {guessRounds.map((guessRound => <Text key={guessRound}>{guessRound}</Text>))} */}
         <FlatList
           data={guessRounds}
@@ -113,8 +113,13 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   buttonsContainer: {
+    flexDirection: "row",
   },
   buttonContainer: {
-    width: 100,
+    flex: 1
   },
-});
+  listContainer: {
+    flex: 1,
+    padding: 16,
+  },
+  });
