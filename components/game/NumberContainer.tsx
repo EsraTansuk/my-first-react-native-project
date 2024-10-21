@@ -1,7 +1,7 @@
 
 import { FC } from "react";
 import { StyleSheet, Text, View, Dimensions } from "react-native";
-import { Colors } from "../../constants/Colors";
+import { Colors } from "../../constants/Colors.ios";
 
 
 export interface NumberContainerProps {

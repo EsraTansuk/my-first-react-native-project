@@ -3,7 +3,7 @@
 import React, {FC} from 'react'
 import {Dimensions, View} from 'react-native'
 import {StyleSheet} from 'react-native'
-import { Colors } from '../../constants/Colors'
+import { Colors } from '../../constants/Colors.ios'
 
 export interface CardProps {
   children?: React.ReactNode

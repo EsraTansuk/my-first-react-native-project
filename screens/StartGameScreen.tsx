@@ -8,11 +8,11 @@ import {
   KeyboardAvoidingView,
 } from "react-native";
 import { PrimaryButton } from "../components/ui/PrimaryButton";
-import Title from "../components/ui/Title";
-import { TitleProps } from "../components/ui/Title";
+import Title from "../components/ui/Title.ios";
+import { TitleProps } from "../components/ui/Title.ios";
 import { Card } from "../components/ui/Card";
 import { InstructionText } from "../components/ui/InstructionText";
-import { Colors } from "../constants/Colors";
+import { Colors } from "../constants/Colors.ios";
 import { ScrollView } from "react-native-gesture-handler";
 
 export interface StartGameScreenProps {
