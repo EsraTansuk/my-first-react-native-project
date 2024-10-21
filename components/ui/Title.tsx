@@ -23,11 +23,13 @@ const styles = StyleSheet.create({
     title: {
       fontFamily: 'open-sans-bold',
       fontSize: 18,
-      fontWeight: 'bold',
-      color: Colors.accent500,
+      // fontWeight: 'bold',
+      color: 'lightgrey',
       textAlign: 'center',
       borderWidth: 2,
-      borderColor: Colors.accent500,
+      borderColor: 'lightgrey',
       padding: 12,
+      maxWidth: '80%',
+      width: 300,
     }
   })
