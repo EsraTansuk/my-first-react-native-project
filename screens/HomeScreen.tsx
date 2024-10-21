@@ -6,7 +6,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import StartGameScreen from "./StartGameScreen";
 import GameScreen from "./GameScreen";
 import GameOverScreen from "./GameOverScreen";
-import { Colors } from "../constants/Colors.ios";
+import { Colors } from "../constants/Colors";
 import { StatusBar } from "expo-status-bar";
 
 SplashScreen.preventAutoHideAsync();

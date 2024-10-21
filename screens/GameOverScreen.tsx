@@ -7,8 +7,8 @@ import {
   useWindowDimensions,
 } from "react-native";
 import { Image } from "react-native";
-import Title from "../components/ui/Title.ios";
-import { Colors } from "../constants/Colors.ios";
+import Title from "../components/ui/Title";
+import { Colors } from "../constants/Colors";
 import { PrimaryButton } from "../components/ui/PrimaryButton";
 import { ScrollView } from "react-native-gesture-handler";
 

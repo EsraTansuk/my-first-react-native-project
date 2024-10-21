@@ -2,7 +2,7 @@
 
 import {FC} from 'react'
 import {View, Text, Pressable, StyleSheet} from 'react-native'
-import { Colors } from '../../constants/Colors.ios';
+import { Colors } from '../../constants/Colors';
 
 export interface PrimaryButtonProps {
   children: React.ReactNode;

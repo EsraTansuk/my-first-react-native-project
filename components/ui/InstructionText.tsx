@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react'
 import {StyleSheet, Text} from 'react-native'
-import { Colors } from '../../constants/Colors.ios'
+import { Colors } from '../../constants/Colors'
 
 export interface InstructionTextProps {
   children?: React.ReactNode
